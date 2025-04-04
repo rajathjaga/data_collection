@@ -13,7 +13,6 @@ DB_PORT = os.environ['DB_PORT']
 SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL")
 
 def send_slack_alert(message):
-    """Send an alert to Slack when API fails"""
     payload = {"text": f"*Alert:* {message}"}
     requests.post(SLACK_WEBHOOK_URL, json=payload)
 
